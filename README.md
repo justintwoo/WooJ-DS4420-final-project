@@ -36,21 +36,16 @@ Each subfolder within the jordans folder represents a different Jordan sneaker m
 
 To create new training data, just run preprocessing_and_training.py and the code will overwrite the existing images 
 
-### Prerequisites
-
-List any prerequisites for the project, such as required software or hardware.
-
-### Installing
-
-Step-by-step instructions for installing the project.
-
 ## Usage
 
-Step-by-step instructions for using the project.
-
-## Tests
-
-Explain how to run the tests for the project and provide examples of the output.
-
+1. Clone the repository from GitHub to your local machine.
+2. Run preprocessing_and_training.py to collect the training data and then preprocess these images and train the image recognition model. This will save the model as jordan_classifier.pkl.
+3. Run app.py to start the Flask application.
+4. In your web browser, go to http://localhost:5000/.
+5. Click the "Choose File" button to select an image of a Jordan sneaker from the uploads folder.
+6. Click the "Predict" button to run the model on the selected image
+7. Wait for the application to process the image and predict the type of Jordan sneaker. The application will display the predicted type of Jordan sneaker and the confidence percentage of the prediction.
+8. You can repeat steps 6-9 with other images of Jordan sneakers.
+9. When finished, you can stop the Flask application by pressing Ctrl+C in the terminal where the application is running.
 
 
