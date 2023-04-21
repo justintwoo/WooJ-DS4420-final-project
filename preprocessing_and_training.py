@@ -68,7 +68,6 @@ def download_training_data(search_terms, num_images = 100, path_name='jordans', 
         for file in existing_files:
             file.unlink()
         download_images(dest, urls=search_images(term, max_images=num_images))
-        # sleep(10)  # Pause between searches to avoid over-loading server
         resize_images(path / term, max_size=max_size, dest=path / term)
 
 def train_model(path = Path('jordans')):
