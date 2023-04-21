@@ -1,6 +1,5 @@
 # Jordan Sneaker Recognition Application 
 ## By Justin Woo
-### DS4420 Final Project
 
 The Jordan sneaker recognition application is a machine learning-based web application that predicts the model of a Jordan sneaker based on an image uploaded by the user. The project uses a pre-trained convolutional neural network model to classify the images into one of 14 Jordan sneaker models.
 
