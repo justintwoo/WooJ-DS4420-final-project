@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jordan (1-14) Sneaker Recognition App</title>
+</head>
+<body>
+    <h1>Jordan (1-14) Sneaker Recognition App</h1>
+    <form id="upload-form" enctype="multipart/form-data">
+        <input type="file" name="image" id="image-input">
+        <button type="submit" id="predict-button">Predict</button>
+    </form>
+    <div id="result"></div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#upload-form').on('submit', function(event) {
+                event.preventDefault();
+                if ($('#image-input').val() === '') {
+                    alert('Please select an image!');
+                    return;
+                }
+                var form_data = new FormData($('#upload-form')[0]);
+                $.ajax({
+                    type: 'POST',
+                    url: '/predict',
+                    data: form_data,
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    async: true,
+                    success: function(response) {
+                        $('#result').html('<h2>Prediction: ' + response.prediction + '</h2><h3>Confidence: ' + response.confidence + '</h3>');
+                    },
+
+                    error: function() {
+                        alert('An error occurred while processing your request.');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
