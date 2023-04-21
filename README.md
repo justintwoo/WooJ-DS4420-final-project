@@ -8,13 +8,13 @@ The application has a simple web interface that allows the user to upload an ima
 ## Code Files Description
 ### app.py
 
-app.py contains the Flask web application that serves the Jordan sneaker recognition project. This file is responsible for handling the incoming requests and returning the predicted results. It contains the following main functions:
+app.py contains the Flask web application that serves the Jordan sneaker recognition project. This file is responsible for handling the incoming requests and returning the predicted results.
 
 ### preprocessing_and_training.py
-preprocessing_and_training.py contains the machine learning model and code for predicting the model of the Jordan sneaker. It uses the FastAI library to train a convolutional neural network on a dataset of 14 Jordan sneaker models. This file contains the following main functions:
+preprocessing_and_training.py contains the machine learning model and code for predicting the model of the Jordan sneaker. It uses the FastAI library to train a convolutional neural network on a dataset of 14 Jordan sneaker models. 
 
 ### unittest.py
-unittest.py contains the unit and integration tests for the Jordan sneaker recognition project. It uses the built-in Python unittest library to define and run the tests. The tests include the following:
+unittest.py contains the unit and integration tests for the Jordan sneaker recognition project. It uses the built-in Python unittest library to define and run the tests. The tests include testing various different types of images (product photos, photos taken from phone, and on-foot pictures) and testing the image verification functions to ensure it is properly filtering images that are valid or not.
 
 ## Additional Files Description:
 ### jordan_classifier.pkl
