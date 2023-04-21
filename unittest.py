@@ -10,29 +10,39 @@ class TestFunctions(unittest.TestCase):
         filename = 'jordan_2.jpg'
         img_path = f"uploads/{filename}"
         img = Image.open(img_path)
-        img = np.array(img)
+        img = img.crop_pad((192, 192))
         label, index, probs = learn.predict(img)
-
         self.assertEqual(label, 'jordan 2')
 
         # photo taken of personal shoe from iphone
-        img_path = f"uploads/{filename}"
         filename = 'jordan_1.jpg'
+        img_path = f"uploads/{filename}"
         img = Image.open(img_path)
-        img = np.array(img)
+        img = img.crop_pad((192, 192))
         label, index, probs = learn.predict(img)
-
         self.assertEqual(label, 'jordan 1')
 
         # on-foot picture taken from internet
-        img_path = f"uploads/{filename}"
         filename = 'jordan_5.jpg'
+        img_path = f"uploads/{filename}"
         img = Image.open(img_path)
-        img = np.array(img)
+        img = img.crop_pad((192, 192))
         label, index, probs = learn.predict(img)
-
         self.assertEqual(label, 'jordan 5')
 
+    def test_is_readable_image_pass(self):
+        filename = 'jordan_1.jpg'
+        img_path = f"uploads/{filename}"
+
+        # Test whether the image file is readable
+        self.assertTrue(is_readable_image(img_path))
+
+    def test_is_readable_image_fail(self):
+        filename = 'jordan_1.HEIC'
+        img_path = f"uploads/{filename}"
+
+        # Test whether the image file is readable
+        self.assertFalse(is_readable_image(img_path))
 
 
 if __name__ == '__main__':

@@ -89,7 +89,6 @@ def train_model(path = Path('jordans')):
     ).dataloaders(path, bs=32)
 
     # Set the path to the saved model
-    model_path = Path('jordan_classifier.pkl')
     learn = vision_learner(dls, resnet18, metrics=error_rate)
 
     learn.fine_tune(3)
