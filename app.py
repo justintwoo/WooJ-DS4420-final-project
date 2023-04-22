@@ -10,7 +10,6 @@ app = Flask(__name__)
 path = Path(__file__).parent
 model_path = path/'jordan_classifier.pkl'
 learn = load_learner(model_path)
-print('Input shape:', learn.dls[0].after_item.size)
 
 @app.route('/')
 def index():
