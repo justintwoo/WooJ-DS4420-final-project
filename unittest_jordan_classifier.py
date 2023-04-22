@@ -1,5 +1,5 @@
 import unittest
-from jordan_image_recognition import *
+from preprocessing_and_training import *
 
 class TestFunctions(unittest.TestCase):
     def test_predict(self):

@@ -1,6 +1,12 @@
 """
 Project: Jordan Sneaker Recognition Classification Model
+File: preprocessing_and_training.py
 Author: Justin Woo
+
+This file performs preprocessing and training steps on image data, downloading and saving images to a specified
+directory based on a list of search terms. The script filters out unreadable images and resizes downloaded images to a
+specified maximum size. The trained model is saved in a persistent state as a fastai Learner object, and the script
+outputs the model path for future use
 """
 import os
 import cv2
